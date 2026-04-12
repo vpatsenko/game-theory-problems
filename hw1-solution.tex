@@ -1,0 +1,105 @@
+\paragraph{Solution:}
+
+
+
+
+Payoff matrix:
+\[
+\begin{array}{c|cc}
+ & \text{Blue }N & \text{Blue }S\\
+\hline
+\text{Red }N & (10,20) & (0,0)\\
+\text{Red }S & (0,0) & (10,20)
+\end{array}
+\]
+
+\centerline{after applying probabilities}
+\[\downarrow\]
+
+\[
+\begin{array}{c|cc}
+ & \text{Blue }N & \text{Blue }S\\
+\hline
+\text{Red }N & (9,18) & (0,0)\\
+\text{Red }S & (0,0) & (7,14)
+\end{array}
+\]
+
+\centerline{after applying the costs}
+\[\downarrow\]
+
+\[
+\begin{array}{c|cc}
+ & \text{Blue }N & \text{Blue }S\\
+\hline
+\text{Red }N & (4,8) & (-5,-8)\\
+\text{Red }S & (-7,-10) & (0,6)
+\end{array}
+\]
+
+\paragraph{Pure Nash equilibrums}
+
+\[
+(N,N), \qquad (S,S).
+\]
+
+\paragraph{Mixed Nash equilibrium}\mbox{}\\
+\noindent Let
+\[
+p=\mathbb{P}(\text{Red plays }N), \qquad
+q=\mathbb{P}(\text{Blue plays }N).
+\]
+
+
+\textbf{Red indifferent}\\
+
+\noindent Red's expected payoff from playing \(N\) is
+\[
+u_R(N)=4q+(-5)(1-q)=9q-5
+\]
+
+\noindent Red's expected payoff from playing \(S\) is
+\[
+u_R(S)=(-7)q+0\cdot(1-q)=-7q
+\]
+
+\[
+9q-5=-7q
+\]
+Hence
+\[
+16q=5,
+\qquad
+q=\frac{5}{16}
+\]\\
+
+
+\textbf{Blue indifferent}\\
+
+Blue's expected payoff from playing \(N\) is
+\[
+u_B(N)=8p+(-10)(1-p)=18p-10
+\]
+
+Blue's expected payoff from playing \(S\) is
+\[
+u_B(S)=(-8)p+6(1-p)=6-14p.
+\]
+
+Set them equal:
+\[
+18p-10=6-14p.
+\]
+Hence
+\[
+32p=16,
+\qquad
+p=\frac{1}{2}.
+\]
+
+Therefore the mixed Nash equilibrium is
+\[
+p=\frac{1}{2}, \qquad q=\frac{5}{16}
+\]
+
+So, Red plays \(N\) with probability \(\frac{1}{2}\) and Blue plays \(N\) with probability \(\frac{5}{16}\)
