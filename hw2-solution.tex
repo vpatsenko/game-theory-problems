@@ -1,6 +1,5 @@
-\section*{Solution}
-
-Consider the bimatrix game
+\textbf{2. (Parametric game \(2\times 3\)).}
+Consider the following game with parameter \(a\):
 \[
 \begin{array}{c|ccc}
  & L & M & R\\
@@ -11,9 +10,18 @@ D & (5,6) & (2,5) & (5,3)
 \]
 where the row player chooses \(U,D\) and the column player chooses \(L,M,R\).
 
+Find all pure and mixed Nash equilibriums in the cases:
+\begin{enumerate}
+\item[(a)] \(a=3\);
+\item[(b)] \(a=6\);
+\item[(c)] \(a=5\).
+\end{enumerate}
+
+\textbf{Solution.}
+
 We solve the game for \(a=3\), \(a=6\), and \(a=5\).
 
-\subsection*{Step 1: Best responses in general}
+\textbf{Step 1: Best responses in general.}
 
 For the row player:
 
@@ -43,7 +51,7 @@ Thus:
 \item \((U,R)\) is a pure Nash equilibrium if \(a\ge 5\)
 \end{itemize}
 
-\subsection*{Step 2: Mixed equilibrium conditions}
+\textbf{Step 2: Mixed equilibrium conditions.}
 
 Let the row player choose \(U\) with probability \(p\), and the column player choose
 \[
@@ -88,7 +96,7 @@ u_C(L)=u_C(R) \iff 6-5p=3+4p \iff p=\frac13
 
 We now analyze each case separately.
 
-\section*{(a) Case \(a=3\)}
+\textbf{(a) Case \(a=3\).}
 
 The matrix is
 \[
@@ -100,57 +108,57 @@ D & (5,6) & (2,5) & (5,3)
 \end{array}
 \]
 
-\subsection*{Pure Nash equilibria}
+\textbf{Pure Nash equilibriums.}
 
 Since \(a=3<5\), against \(R\) the row player prefers \(D\). Therefore \((U,R)\) is not a Nash equilibrium.
 
 So the only pure Nash equilibrium is
 \[
-(D,L).
+(D,L)
 \]
 
-\subsection*{Mixed Nash equilibria}
+\textbf{Mixed Nash equilibriums.}
 
 For \(a=3\), equation (1) becomes
 \[
 y=x+2z. \tag{2}
 \]
 
-\paragraph{Mixing between \(L\) and \(M\).}
+\textbf{Mixing between \(L\) and \(M\).}
 This requires \(p=\frac16\), and then \(L\) and \(M\) are optimal for the column player.
 
 Set \(z=0\). Then from (2),
 \[
-y=x.
+y=x
 \]
 Together with \(x+y=1\), we get
 \[
-x=y=\frac12.
+x=y=\frac12
 \]
 
 Hence one mixed equilibrium is:
 \[
-p=\frac16,\qquad (x,y,z)=\left(\frac12,\frac12,0\right).
+p=\frac16,\qquad (x,y,z)=\left(\frac12,\frac12,0\right)
 \]
 
-\paragraph{Mixing between \(M\) and \(R\).}
+\textbf{Mixing between \(M\) and \(R\).}
 This requires \(p=\frac23\), and then \(M\) and \(R\) are optimal for the column player.
 
 Set \(x=0\). Then from (2),
 \[
-y=2z.
+y=2z
 \]
 Together with \(y+z=1\), we get
 \[
-z=\frac13,\qquad y=\frac23.
+z=\frac13,\qquad y=\frac23
 \]
 
 Hence another mixed equilibrium is:
 \[
-p=\frac23,\qquad (x,y,z)=\left(0,\frac23,\frac13\right).
+p=\frac23,\qquad (x,y,z)=\left(0,\frac23,\frac13\right)
 \]
 
-\paragraph{Mixing between \(L\) and \(R\).}
+\textbf{Mixing between \(L\) and \(R\).}
 This would require \(p=\frac13\). But then
 \[
 u_C(M)=5+\frac13=\frac{16}{3},
@@ -159,22 +167,22 @@ u_C(L)=u_C(R)=\frac{13}{3},
 \]
 so \(M\) is strictly better. Thus no equilibrium of this type exists.
 
-\subsection*{Answer for \(a=3\)}
+\textbf{Answer for \(a=3\).}
 
 Pure Nash equilibrium:
 \[
-(D,L).
+(D,L)
 \]
 
-Mixed Nash equilibria:
+Mixed Nash equilibriums:
 \[
 \left(\frac16 U+\frac56 D,\ \frac12 L+\frac12 M\right),
 \]
 \[
-\left(\frac23 U+\frac13 D,\ \frac23 M+\frac13 R\right).
+\left(\frac23 U+\frac13 D,\ \frac23 M+\frac13 R\right)
 \]
 
-\section*{(b) Case \(a=6\)}
+\textbf{(b) Case \(a=6\).}
 
 The matrix is
 \[
@@ -186,16 +194,16 @@ D & (5,6) & (2,5) & (5,3)
 \end{array}
 \]
 
-\subsection*{Pure Nash equilibria}
+\textbf{Pure Nash equilibriums.}
 
 Since \(a=6>5\), against \(R\) the row player prefers \(U\). Hence \((U,R)\) is a Nash equilibrium.
 
-Therefore the pure Nash equilibria are
+Therefore the pure Nash equilibriums are
 \[
-(D,L),\qquad (U,R).
+(D,L),\qquad (U,R)
 \]
 
-\subsection*{Mixed Nash equilibria}
+\textbf{Mixed Nash equilibriums.}
 
 For \(a=6\), equation (1) becomes
 \[
@@ -203,7 +211,7 @@ y=x-z. \tag{3}
 \]
 Equivalently,
 \[
-x=y+z.
+x=y+z
 \]
 Using \(x+y+z=1\), we obtain
 \[
@@ -211,38 +219,38 @@ Using \(x+y+z=1\), we obtain
 \quad\Rightarrow\quad
 2y+2z=1
 \quad\Rightarrow\quad
-x=\frac12,\qquad y+z=\frac12.
+x=\frac12,\qquad y+z=\frac12
 \]
 
-\paragraph{Mixing between \(L\) and \(M\).}
+\textbf{Mixing between \(L\) and \(M\).}
 This requires \(p=\frac16\). Set \(z=0\). Then
 \[
-x=\frac12,\qquad y=\frac12.
+x=\frac12,\qquad y=\frac12
 \]
 So we get the mixed equilibrium
 \[
-p=\frac16,\qquad (x,y,z)=\left(\frac12,\frac12,0\right).
+p=\frac16,\qquad (x,y,z)=\left(\frac12,\frac12,0\right)
 \]
 
-\paragraph{Mixing between \(M\) and \(R\).}
+\textbf{Mixing between \(M\) and \(R\).}
 This would require \(p=\frac23\), but such a mixture has \(x=0\), contradicting \(x=\frac12\). So no such equilibrium exists.
 
-\paragraph{Mixing between \(L\) and \(R\).}
+\textbf{Mixing between \(L\) and \(R\).}
 This would require \(p=\frac13\), but then \(M\) is strictly better than both \(L\) and \(R\). So no such equilibrium exists.
 
-\subsection*{Answer for \(a=6\)}
+\textbf{Answer for \(a=6\).}
 
-Pure Nash equilibria:
+Pure Nash equilibriums:
 \[
-(D,L),\qquad (U,R).
+(D,L),\qquad (U,R)
 \]
 
 Mixed Nash equilibrium:
 \[
-\left(\frac16 U+\frac56 D,\ \frac12 L+\frac12 M\right).
+\left(\frac16 U+\frac56 D,\ \frac12 L+\frac12 M\right)
 \]
 
-\section*{(c) Case \(a=5\)}
+\textbf{(c) Case \(a=5\).}
 
 The matrix is
 \[
@@ -254,40 +262,40 @@ D & (5,6) & (2,5) & (5,3)
 \end{array}
 \]
 
-\subsection*{Pure Nash equilibria}
+\textbf{Pure Nash equilibriums.}
 
 Since \(a=5\), against \(R\) the row player is indifferent between \(U\) and \(D\). Therefore \((U,R)\) is a Nash equilibrium, and as before \((D,L)\) is also a Nash equilibrium.
 
-Thus the pure Nash equilibria are
+Thus the pure Nash equilibriums are
 \[
-(D,L),\qquad (U,R).
+(D,L),\qquad (U,R)
 \]
 
-\subsection*{Mixed Nash equilibria}
+\textbf{Mixed Nash equilibriums.}
 
 For \(a=5\), equation (1) becomes
 \[
 y=x. \tag{4}
 \]
 
-\paragraph{Mixing between \(L\) and \(M\).}
+\textbf{Mixing between \(L\) and \(M\).}
 This requires \(p=\frac16\). Set \(z=0\). Then by (4),
 \[
-x=y.
+x=y
 \]
 Since \(x+y=1\), we get
 \[
-x=y=\frac12.
+x=y=\frac12
 \]
 Hence one mixed equilibrium is
 \[
-p=\frac16,\qquad (x,y,z)=\left(\frac12,\frac12,0\right).
+p=\frac16,\qquad (x,y,z)=\left(\frac12,\frac12,0\right)
 \]
 
-\paragraph{Column player uses only \(R\).}
+\textbf{Column player uses only \(R\).}
 Suppose the column player plays \(R\) with probability \(1\), i.e.
 \[
-(x,y,z)=(0,0,1).
+(x,y,z)=(0,0,1)
 \]
 Against \(R\), the row player gets
 \[
@@ -297,23 +305,23 @@ so any mixture of \(U\) and \(D\) is a best response.
 
 Now we need \(R\) to be a best response for the column player. This means
 \[
-u_C(R)\ge u_C(L),\qquad u_C(R)\ge u_C(M).
+u_C(R)\ge u_C(L),\qquad u_C(R)\ge u_C(M)
 \]
 That is,
 \[
 3+4p \ge 6-5p,
 \qquad
-3+4p \ge 5+p.
+3+4p \ge 5+p
 \]
 These inequalities give
 \[
 9p\ge 3 \iff p\ge \frac13,
 \qquad
-3p\ge 2 \iff p\ge \frac23.
+3p\ge 2 \iff p\ge \frac23
 \]
 Hence the condition is
 \[
-p\ge \frac23.
+p\ge \frac23
 \]
 
 Therefore, for every
@@ -326,20 +334,20 @@ the profile
 \]
 is a Nash equilibrium.
 
-\paragraph{Mixing between \(M\) and \(R\).}
+\textbf{Mixing between \(M\) and \(R\).}
 If \(x=0\), then from (4) also \(y=0\), so \(z=1\). This is exactly the previous family with pure \(R\); there is no additional interior mixture of \(M\) and \(R\).
 
-\paragraph{Mixing between \(L\) and \(R\).}
+\textbf{Mixing between \(L\) and \(R\).}
 This would require \(p=\frac13\), but then \(M\) is strictly better than both \(L\) and \(R\), so no such equilibrium exists.
 
-\subsection*{Answer for \(a=5\)}
+\textbf{Answer for \(a=5\).}
 
-Pure Nash equilibria:
+Pure Nash equilibriums:
 \[
-(D,L),\qquad (U,R).
+(D,L),\qquad (U,R)
 \]
 
-Additional mixed equilibria:
+Additional mixed equilibriums:
 \[
 \left(\frac16 U+\frac56 D,\ \frac12 L+\frac12 M\right),
 \]
@@ -347,10 +355,10 @@ and the whole family
 \[
 \left(pU+(1-p)D,\ R\right),
 \qquad
-p\in\left[\frac23,1\right].
+p\in\left[\frac23,1\right]
 \]
 
-\section*{Final answers}
+\textbf{Final answers.}
 
 \[
 \text{For }a=3: \ (D,L),\ \left(\frac16 U+\frac56 D,\frac12 L+\frac12 M\right),\ \left(\frac23 U+\frac13 D,\frac23 M+\frac13 R\right)

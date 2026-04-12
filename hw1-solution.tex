@@ -1,7 +1,17 @@
-\paragraph{Solution:}
+\textbf{Meeting in mountains.}
+Two hiking groups (the Red and the Blue) choose where to cross the mountain ridge:
+through the Northern pass or through the Southern pass.
+They start from the different sides of the ridge and do not have any connection to each other.
+If they both choose the Northern pass, then they meet at the pass with probability \(90\%\).
+If they both choose the Southern pass, then they meet with probability \(70\%\).
+If they choose different passes, they do not meet at all.
+The Red get \(10\) units if they meet, and the Blue get \(20\) units in this case.
+For the Red, the cost of going through the Northern pass is \(5\) and the cost of going through the Southern pass is \(7\).
+For the Blue, the costs are \(10\) for the Northern pass and \(8\) for the Southern pass.
+Draw the matrices and solve the game.
+(The players are interested only in the expected profit.)
 
-
-
+\textbf{Solution.}
 
 Payoff matrix:
 \[
@@ -37,21 +47,21 @@ Payoff matrix:
 \end{array}
 \]
 
-\paragraph{Pure Nash equilibrums}
+\textbf{Pure Nash equilibriums.}
 
 \[
-(N,N), \qquad (S,S).
+(N,N), \qquad (S,S)
 \]
 
-\paragraph{Mixed Nash equilibrium}\mbox{}\\
+\textbf{Mixed Nash equilibrium.}\mbox{}\\
 \noindent Let
 \[
 p=\mathbb{P}(\text{Red plays }N), \qquad
-q=\mathbb{P}(\text{Blue plays }N).
+q=\mathbb{P}(\text{Blue plays }N)
 \]
 
 
-\textbf{Red indifferent}\\
+\textbf{Red indifferent.}
 
 \noindent Red's expected payoff from playing \(N\) is
 \[
@@ -71,10 +81,9 @@ Hence
 16q=5,
 \qquad
 q=\frac{5}{16}
-\]\\
+\]
 
-
-\textbf{Blue indifferent}\\
+\textbf{Blue indifferent.}
 
 Blue's expected payoff from playing \(N\) is
 \[
@@ -83,18 +92,18 @@ u_B(N)=8p+(-10)(1-p)=18p-10
 
 Blue's expected payoff from playing \(S\) is
 \[
-u_B(S)=(-8)p+6(1-p)=6-14p.
+u_B(S)=(-8)p+6(1-p)=6-14p
 \]
 
 Set them equal:
 \[
-18p-10=6-14p.
+18p-10=6-14p
 \]
 Hence
 \[
 32p=16,
 \qquad
-p=\frac{1}{2}.
+p=\frac{1}{2}
 \]
 
 Therefore the mixed Nash equilibrium is
