@@ -1,0 +1,159 @@
+\\
+\textbf{5. (Condorcet voting).}
+George, Ferdinand and Irene choose where to fly on vacations.
+There are three variants: Germany, France and Italy.
+George prefers Germany, his second choice is France, and the least preferable option is Italy,
+Ferdinand prefers France, then Italy, then Germany.
+Finally, Irene prefers Italy, then Germany, then France.
+They adopt the following procedure: each one names an option, if any option is named by two or three people then it is chosen, and if all name different options then the option named by Irene is chosen.
+
+\begin{enumerate}
+\item[(a)] Formulate the situation as a one-shot game;
+\item[(b)] Find an equilibrium by eliminating weakly dominated strategies;
+\item[(c)] Find all Nash equilibriums.
+\end{enumerate}
+
+\textbf{Solution.}
+
+In the solution we write $Gm$, $Fr$, $It$ for Germany, France, and Italy.
+
+\textbf{(a) One-shot game}
+
+Preferences:
+
+\begin{align*}
+\text{George (G):} &\quad Gm \succ Fr \succ It \\
+\text{Ferdinand (F):} &\quad Fr \succ It \succ Gm \\
+\text{Irene (I):} &\quad It \succ Gm \succ Fr
+\end{align*}
+
+
+Players: $G, F, I$
+
+Strategy sets:
+\[
+S_G = S_F = S_I = \{Gm, Fr, It\}
+\]
+
+Outcome function:
+\[
+o(g,f,i)=
+\begin{cases}
+g, & \text{if } g=f,\\
+i, & \text{if } g\neq f
+\end{cases}
+\]
+
+Utilities (using 0,1,2):
+\begin{align*}
+&u_G(Gm)=2,\ u_G(Fr)=1,\ u_G(It)=0,\\
+&u_F(Fr)=2,\ u_F(It)=1,\ u_F(Gm)=0,\\
+&u_I(It)=2,\ u_I(Gm)=1,\ u_I(Fr)=0
+\end{align*}
+
+\textbf{(b) Elimination of weakly dominated strategies.}
+
+\textbf{Step 1: Irene.}
+If $g\neq f$, the outcome equals Irene's choice, and she prefers $It$. If $g=f$, her choice does not matter. Meaning
+\[
+It \text{ weakly dominates } Gm \text{ and } Fr
+\]
+So she will only play $It$.
+
+\medskip
+
+\textbf{Step 2: Reduced game (George vs Ferdinand).}
+
+If $g=f$, outcome is $g$. If $g\neq f$, outcome is $It$.
+
+Payoff matrix:
+
+\[
+\begin{array}{c|ccc}
+ & Gm & Fr & It\\
+\hline
+Gm & (2,0) & (0,1) & (0,1)\\
+Fr & (0,1) & (1,2) & (0,1)\\
+It & (0,1) & (0,1) & (0,1)
+\end{array}
+\]
+
+\medskip
+
+\textbf{Step 3: Eliminate dominated strategies.}
+
+For George:
+\[
+It \text{ is weakly dominated by } Fr
+\]
+
+For Ferdinand:
+\[
+It \text{ is weakly dominated by } Fr
+\]
+\[
+Gm \text{ is strictly dominated by } Fr
+\]
+
+Thus only $Fr$ remains for both
+
+\medskip
+
+Nash equilibrium:
+\[
+(Fr,Fr,It)
+\]
+
+\textbf{(c) All Nash equilibriums.}
+
+We use:
+\[
+o(g,f,i)=
+\begin{cases}
+g, & g=f,\\
+i, & g\neq f
+\end{cases}
+\]
+
+\medskip
+
+\textbf{Case 1: $g=f$.}
+
+Then outcome is $g$ and Irene cannot influence it.
+
+Nash equilibriums:
+\begin{itemize}
+\item $(Gm,Gm,Gm)$
+\item $(Fr,Fr,Fr)$
+\item $(Fr,Fr,It)$
+\item $(It,It,It)$
+\end{itemize}
+
+\medskip
+
+\textbf{Case 2: $g\neq f$.}
+
+Then outcome is Irene's choice. For equilibrium, Irene must play her best response:
+\[
+i=It
+\]
+
+Check profiles:
+
+
+
+
+\[
+(Gm,It,It)
+\]
+is a Nash equilibrium
+
+\[
+u_G(It) = 0,
+u_F(It) = 1,
+u_I(It) = 2
+\]
+
+Other profiles with $g\neq f$ admit profitable deviations and are not Nash equilibriums.
+
+\medskip

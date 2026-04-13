@@ -1,0 +1,192 @@
+\textbf{4. (Normandy landings).}
+
+In 1944, the Allies invaded Normandy, which influenced the outcome of World War II.
+The Allies had 6 possible attacking configurations (1--6) and the Nazis had 6 possible defensive strategies (A--F).
+All possible battles were simulated and the following outcomes for the Allies were estimated
+(the outcomes for the Nazis are the negations of these values):
+
+\[
+\begin{array}{c|cccccc}
+ & A & B & C & D & E & F\\
+\hline
+1 & 13 & 29 & 8 & 12 & 16 & 23\\
+2 & 18 & 22 & 21 & 22 & 29 & 31\\
+3 & 18 & 22 & 31 & 31 & 27 & 37\\
+4 & 11 & 22 & 12 & 21 & 21 & 26\\
+5 & 18 & 16 & 19 & 14 & 19 & 28\\
+6 & 23 & 22 & 19 & 23 & 30 & 34
+\end{array}
+\]
+
+\begin{enumerate}
+\item[(a)] Eliminate all dominated strategies.
+\item[(b)] Try to solve the remaining game.
+\item[(c)] In reality, the Germans chose defense \(B\) and the Allies chose attack \(1\).
+Comment on these choices.
+\end{enumerate}
+
+\textbf{Solution.}
+
+
+\textbf{(a) Elimination of dominated strategies.}
+
+\textbf{Rows.}
+The Allies aim to maximize.
+
+\begin{itemize}
+\item Row 4 is dominated by row 2:
+\[
+(11,22,12,21,21,26)\le (18,22,21,22,29,31)
+\]
+\item Row 5 is dominated by row 6:
+\[
+(18,16,19,14,19,28)\le (23,22,19,23,30,34)
+\]
+\end{itemize}
+
+Thus rows \(4\) and \(5\) are eliminated.
+
+\textbf{Columns.}
+The Germans aim to minimize.
+
+\begin{itemize}
+\item Column \(E\) is dominated by \(A\):
+\[
+(16,29,27,30)\ge (13,18,18,23)
+\]
+\item Column \(F\) is dominated by \(A\):
+\[
+(23,31,37,34)\ge (13,18,18,23)
+\]
+\end{itemize}
+
+Remove columns \(E,F\).
+
+We obtain:
+\[
+\begin{array}{c|cccc}
+ & A & B & C & D\\
+\hline
+1 & 13 & 29 & 8 & 12\\
+2 & 18 & 22 & 21 & 22\\
+3 & 18 & 22 & 31 & 31\\
+6 & 23 & 22 & 19 & 23
+\end{array}
+\]
+
+\begin{itemize}
+\item Column \(D\) is dominated by \(C\):
+\[
+(12,22,31,23)\ge (8,21,31,19)
+\]
+\end{itemize}
+
+Remove \(D\), giving:
+\[
+\begin{array}{c|ccc}
+ & A & B & C\\
+\hline
+1 & 13 & 29 & 8\\
+2 & 18 & 22 & 21\\
+3 & 18 & 22 & 31\\
+6 & 23 & 22 & 19
+\end{array}
+\]
+
+\begin{itemize}
+\item Row 2 is dominated by row 3:
+\[
+(18,22,21)\le (18,22,31)
+\]
+\end{itemize}
+
+Remove row \(2\).
+
+\textbf{Remaining game.}
+\[
+\boxed{
+\begin{array}{c|ccc}
+ & A & B & C\\
+\hline
+1 & 13 & 29 & 8\\
+3 & 18 & 22 & 31\\
+6 & 23 & 22 & 19
+\end{array}}
+\]
+
+\textbf{(b) Solving the remaining game.}
+
+\textbf{Check for pure equilibrium.}
+
+Row minimum entries in each row:
+\[
+8,\quad 18,\quad 19 \quad \Rightarrow \quad \text{maximum}=19
+\]
+
+Column maximum entries in each column:
+\[
+23,\quad 29,\quad 31 \quad \Rightarrow \quad \text{minimum}=23
+\]
+
+There is no pure Nash equilibrium because the Nazis want to minimize their payoff, while the Allies want to maximize their payoff\\
+
+\textbf{Mixed equilibrium.}
+
+Let the Allies mix between rows \(3\) and \(6\) because the lowest payoff \(\ge\) than the highest payoff in row 1:
+
+\[
+p = \Pr(3), \quad 1-p = \Pr(6)
+\]
+
+Expected payoffs:
+
+\[
+u(A) = 18p + 23(1-p) = 23 - 5p
+\]
+\[
+u(B) = 22
+\]
+\[
+u(C) = 31p + 19(1-p) = 19 + 12p
+\]
+
+Equalizing \(A\) and \(C\):
+
+\[
+23 - 5p = 19 + 12p \;\Rightarrow\; p = \frac{4}{17}
+\]
+
+Thus the Allies play:
+\[
+\left(0,0,\frac{4}{17},0,0,\frac{13}{17}\right)
+\]
+
+The value is:
+\[
+v = 23 - 5p = 23 - 5 \cdot \frac{4}{17} = \frac{371}{17} \approx 21.82
+\]
+
+\textbf{Germans' strategy.}
+
+Let the Germans mix between \(A\) and \(C\) because column
+B gives higher payoffs to the Allies than the optimal mix and it is worse for the Germans:
+
+\[
+q = \Pr(A), \quad 1-q = \Pr(C)
+\]
+
+Indifference between rows \(3\) and \(6\):
+
+\[
+31 - 13q = 19 + 4q \;\Rightarrow\; q = \frac{12}{17}
+\]
+
+Thus the Germans play:
+\[
+\left(\frac{12}{17},0,\frac{5}{17},0,0,0\right)
+\]
+
+\textbf{(c) Comment on choices:}
+Germany played suboptimally by choosing
+B, and the Allies correctly exploited this by choosing
+1, resulting in a higher payoff than the equilibrium value.
