@@ -1,0 +1,198 @@
+\textbf{2.\ (Moving the knight).}
+
+We number the board by coordinates
+\[
+a1=(1,1),\qquad h8=(8,8).
+\]
+The knight starts at
+\[
+h8=(8,8).
+\]
+
+A legal move is one of
+\[
+(x,y)\mapsto (x+1,y-2),
+\]
+\[
+(x,y)\mapsto (x-1,y-2),
+\]
+\[
+(x,y)\mapsto (x-2,y+1),
+\]
+\[
+(x,y)\mapsto (x-2,y-1)
+\]
+provided the new square is still on the board.
+winning if the player to move from it can move to a losing position.
+
+\subsection*{Losing positions on the \(8\times 8\) board}
+
+In coordinates, these are the \(2\times2\) blocks
+\[
+\{1,2\}\times\{1,2\},
+\]
+\[
+\{1,2\}\times\{5,6\},
+\]
+\[
+\{5,6\}\times\{1,2\},
+\]
+\[
+\{5,6\}\times\{5,6\},
+\]
+together with the special square
+\[
+(8,8).
+\]
+
+We can see that losing positions satisfy
+\[
+x,y\equiv 1 \text{ or } 2 \pmod 4
+\]
+
+On the \(8\times 8\) board, the losing positions can be displayed as follows:
+
+\[
+\begin{array}{c|cccccccc}
+& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\hline
+8 & . & . & . & . & . & . & . & L\\
+7 & . & . & . & . & . & . & . & .\\
+6 & L & L & . & . & L & L & . & .\\
+5 & L & L & . & . & L & L & . & .\\
+4 & . & . & . & . & . & . & . & .\\
+3 & . & . & . & . & . & . & . & .\\
+2 & L & L & . & . & L & L & . & .\\
+1 & L & L & . & . & L & L & . & .
+\end{array}
+\]
+
+\subsection*{Why these positions are losing}
+
+Let
+\[
+R=\{(x,y): x,y\equiv 1 \text{ or }2 \pmod 4\}.
+\]
+
+These positions form repeated \(2\times2\) blocks. A knight move changes one
+coordinate by \(1\) and the other coordinate by \(2\). Therefore a move from a
+position in \(R\) always leaves \(R\). So no position in \(R\) has a move to
+another position in \(R\).
+
+Conversely, by backward induction, every legal move out of one of these blocks
+leads to a position from which the next player can move back into a smaller
+\(R\)-position. Hence the positions in \(R\) are losing.
+
+Now check the starting square:
+\[
+h8=(8,8)
+\]
+Its only legal moves are
+\[
+(8,8)\mapsto (7,6)
+\]
+and
+\[
+(8,8)\mapsto (6,7)
+\]
+
+Both of these positions are winning, because both can move to
+\[
+(5,5)=e5,
+\]
+which is losing:
+\[
+(7,6)\mapsto (5,5),
+\]
+\[
+(6,7)\mapsto (5,5)
+\]
+
+Therefore every legal move from \(h8\) goes to a winning position. Hence
+\[
+h8
+\]
+is losing.
+
+Thus the first player loses and the second player wins.
+
+\subsection*{General \(n\times n\) board}
+
+Now suppose the board is \(n\times n\), and the knight starts at the top-right
+corner
+\[
+(n,n).
+\]
+
+The losing block pattern repeats modulo \(4\). Namely, positions with
+\[
+x,y\equiv 1 \text{ or }2 \pmod 4
+\]
+are losing positions.
+
+Now consider the starting square \((n,n)\).
+
+\subsubsection*{Case 1: \(n\equiv 1\pmod4\)}
+
+Then
+\[
+(n,n)\equiv (1,1)\pmod4.
+\]
+So \((n,n)\) lies in a losing block. Therefore the second player wins.
+
+\subsubsection*{Case 2: \(n\equiv 2\pmod4\)}
+
+Then
+\[
+(n,n)\equiv (2,2)\pmod4.
+\]
+Again, \((n,n)\) lies in a losing block. Therefore the second player wins.
+
+\subsubsection*{Case 3: \(n\equiv 3\pmod4\)}
+
+Then the first player can move to a losing block:
+\[
+(n,n)\mapsto (n-1,n-2).
+\]
+Modulo \(4\),
+\[
+(3,3)\mapsto (2,1).
+\]
+Since \((2,1)\) is a losing-type residue, the first player moves to a losing
+position. Therefore the first player wins.
+
+\subsubsection*{Case 4: \(n\equiv 0\pmod4\)}
+
+The only legal moves from \((n,n)\) are
+\[
+(n,n)\mapsto(n-1,n-2),
+\]
+\[
+(n,n)\mapsto(n-2,n-1).
+\]
+
+But both resulting positions are winning, because each can move to
+\[
+(n-3,n-3),
+\]
+and
+\[
+(n-3,n-3)\equiv(1,1)\pmod4.
+\]
+So \((n-3,n-3)\) is losing.
+
+Therefore \((n,n)\) is losing, and the second player wins.
+
+\subsection*{Final general result}
+
+Hence, on an \(n\times n\) board starting from the top-right corner,
+
+\[
+\boxed{\text{the first player wins if and only if } n\equiv 3\pmod4.}
+\]
+
+For the usual chessboard,
+\[
+8\equiv0\pmod4,
+\]
+so the first player loses and the second player wins.

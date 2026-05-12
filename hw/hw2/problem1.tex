@@ -1,0 +1,62 @@
+\textbf{1.\ (Binary stones).}
+Consider the following game: two players may take from a heap any number of stones that is a power of \(2\) (including \(1 = 2^0\)).
+The player who has taken the last stone wins.
+For which number of stones does the first player win?
+How should he play?
+(You should not only specify the strategy but also prove that it works.)
+
+\textbf{Solution.}
+
+Let \(n\) be the number of stones.
+Allowed moves are to remove \(1, 2, 4, 8, \dots, 2^k\) stones.
+We seek the losing positions:
+
+\medskip
+\noindent\textbf{Small cases.}
+\[
+\begin{array}{c|cccccccccc}
+n & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\\hline
+\text{outcome} & \text{lose} & \text{win} & \text{win} & \text{lose} & \text{win} & \text{win} & \text{lose} & \text{win} & \text{win} & \text{lose}
+\end{array}
+\]
+The losing positions among these are \(0, 3, 6, 9, \dots\)
+
+\medskip
+\noindent\textbf{Claim.}
+The losing positions are exactly the multiples of \(3\).
+Equivalently, the first player wins if and only if \(n \not\equiv 0 \pmod{3}\). For example, 1, 2 or 4 and etc.
+
+\medskip
+\noindent\textbf{Proof.}
+Powers of \(2\) modulo \(3\) alternate:
+\[
+2^0 \equiv 1\pmod{3} \qquad 2^1 \equiv 2\pmod{3}
+\]
+\[
+2^2 \equiv 1 \pmod{3} \qquad 2^3 \equiv 2 \pmod{3}
+\]
+In general \(2^k \equiv (-1)^k \pmod{3}\), so every allowed move removes either \(1\) or \(2\) modulo \(3\), never \(0\) modulo \(3\).
+
+\smallskip
+If \(n \equiv 0 \pmod{3}\), then for any move \(n \mapsto n - 2^k\) we have \(n - 2^k \not\equiv 0 \pmod{3}\).
+
+If \(n \not\equiv 0 \pmod{3}\), there is a move to a multiple of \(3\):
+
+\begin{center}
+
+\noindent\textbf{1.} \(n \equiv 1 \pmod{3}\), remove \(1 = 2^0\)
+
+\noindent\textbf{2.} \(n \equiv 2 \pmod{3}\), remove \(2 = 2^1\)
+
+\end{center}
+
+Thus from a multiple of \(3\) every move goes to a non-multiple of \(3\), and from a non-multiple of \(3\) there is a move to a multiple of \(3\).
+The terminal position \(n = 0\) is a multiple of \(3\) and is losing for the player to move.
+Hence multiples of \(3\). Therefore the first player wins if and only if \(n \not\equiv 0 \pmod{3}\).
+
+\medskip
+\noindent\textbf{Optimal strategy.}
+If \(n \equiv 1 \pmod{3}\), remove \(1\) stone; if \(n \equiv 2 \pmod{3}\), remove \(2\) stones.
+Thereafter always leave a heap size divisible by \(3\).
+Since the opponent can only subtract \(1\) or \(2\) modulo \(3\) from the heap, you can always restore divisibility by \(3\) on your turn.
+Eventually the opponent faces \(n = 0\) and loses.
