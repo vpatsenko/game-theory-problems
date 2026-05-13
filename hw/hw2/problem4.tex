@@ -1,0 +1,77 @@
+\textbf{4.\ (Cake division).}
+Albert and Bernie divide a cake by alternating proposals. First Albert proposes
+a division. If Bernie accepts, the division is implemented. Otherwise they wait
+one hour and Bernie proposes. If Albert accepts, the division is implemented;
+otherwise they wait another hour, and so on.
+
+A fraction \(p\) of the cake is worth
+\[
+p\left(\frac12\right)^t
+\]
+after \(t\) hours of waiting, for \(t\le 5\). After \(5\) hours the cake becomes
+worthless. Find a subgame perfect Nash equilibrium and determine how long they wait.
+
+\textbf{Solution.}
+
+Let
+\[
+\delta=\frac12.
+\]
+
+The last possible valuable proposal is at \(t=5\), made by Bernie. If Albert
+rejects at \(t=5\), both get \(0\). Hence Bernie can keep the whole remaining cake:
+\[
+V_5^P=\delta^5=\frac1{32}.
+\]
+
+Work backwards. At time \(t\), the responder can reject and become proposer at
+time \(t+1\). Therefore the responder must receive exactly the continuation value
+\[
+V_{t+1}^P.
+\]
+
+Hence
+\[
+V_t^P=\delta^t - V_{t+1}^P.
+\]
+
+Now compute:
+\[
+
+V_5^P=\frac1{32},
+\]
+\[
+V_4^P=\frac1{16}-\frac1{32}=\frac1{32},
+\]
+\[
+V_3^P=\frac18-\frac1{32}=\frac3{32},
+\]
+\[
+V_2^P=\frac14-\frac3{32}=\frac5{32},
+\]
+\[
+V_1^P=\frac12-\frac5{32}=\frac{11}{32},
+\]
+\[
+V_0^P=1-\frac{11}{32}=\frac{21}{32}.
+\]
+
+At \(t=0\), Albert is proposer. He gives Bernie her continuation value:
+\[
+\frac{11}{32}.
+\]
+
+Therefore Albert proposes
+\[
+\left(\frac{21}{32},\frac{11}{32}\right),
+\]
+and Bernie accepts.
+
+Thus the subgame perfect Nash equilibrium outcome is
+\[
+\boxed{\left(\frac{21}{32},\frac{11}{32}\right)}
+\]
+and they wait
+\[
+\boxed{0\text{ hours}.}
+\]

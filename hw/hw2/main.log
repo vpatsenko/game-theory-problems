@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.9)  12 MAY 2026 20:19
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.9)  13 MAY 2026 07:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,39 +334,69 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
- (./problem1.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (./problem4.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) (./problem2.tex
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.40 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.40 
+     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.41 V_
+       5^P=\frac1{32},
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.42 \]
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
 
 [1
 
-]
+])
 
-[2]
-
-[3])
-
-[4]
-
-[5] (./main.aux)
+[2] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12642 strings out of 475366
- 258947 string characters out of 5762340
- 618013 words of memory out of 5000000
- 35397 multiletter control sequences out of 15000+600000
- 565245 words of font info for 70 fonts, out of 8000000 for 9000
+ 12599 strings out of 475366
+ 258322 string characters out of 5762340
+ 615012 words of memory out of 5000000
+ 35368 multiletter control sequences out of 15000+600000
+ 560584 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 84i,8n,91p,441b,171s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,6n,91p,441b,115s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (5 pages).
+Output written on main.pdf (2 pages).

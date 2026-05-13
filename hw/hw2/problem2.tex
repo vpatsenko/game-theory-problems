@@ -116,79 +116,142 @@ is losing.
 
 Thus the first player loses and the second player wins.
 
-\subsection*{General \(n\times n\) board}
+% \subsection*{General \(n\times n\) board}
 
-Now suppose the board is \(n\times n\), and the knight starts at the top-right
-corner
+% For the same game on an \(n\times n\) board, the losing block pattern repeats
+% modulo \(4\): positions with
+% \[
+% x,y\equiv 1 \text{ or }2 \pmod 4
+% \]
+% are losing.
+
+% Starting from \((n,n)\), if \(n\equiv1\) or \(2\pmod4\), the initial square is
+% already losing. If \(n\equiv3\pmod4\), the first player moves
+% \[
+% (n,n)\mapsto(n-1,n-2),
+% \]
+% which has residue \((2,1)\) and is losing. If \(n\equiv0\pmod4\), the only
+% first moves go to \((n-1,n-2)\) or \((n-2,n-1)\), and each can be answered by
+% moving to \((n-3,n-3)\equiv(1,1)\pmod4\), a losing square.
+
+% Thus, on an \(n\times n\) board starting from the top-right corner,
+
+% \[
+% \boxed{\text{the first player wins if and only if } n\equiv 3\pmod4.}
+% \]
+
+% For the usual chessboard,
+% \[
+% 8\equiv0\pmod4,
+% \]
+% so the first player loses and the second player wins.
+
+\section*{Moving the knight: general solution}
+
+Consider an \(n\times n\) board with coordinates
+\[
+(1,1), (1,2), \ldots, (n,n),
+\]
+where the knight starts at the top-right corner
 \[
 (n,n).
 \]
 
-The losing block pattern repeats modulo \(4\). Namely, positions with
+The legal moves are the same as before whenever the new square is still on the board.
+
+
+\subsection*{Losing blocks}
+
+The basic losing positions are the \(2\times2\) blocks satisfying
 \[
-x,y\equiv 1 \text{ or }2 \pmod 4
+x,y\equiv 1 \text{ or } 2 \pmod 4.
 \]
-are losing positions.
 
-Now consider the starting square \((n,n)\).
 
-\subsubsection*{Case 1: \(n\equiv 1\pmod4\)}
+A move from such a square always leaves this set. Moreover, after any legal move from such a square, the next player can move back to a smaller square of the same type. Therefore these positions are losing positions.
+
+\subsection*{Starting from the corner}
+
+Now consider the starting square
+\[
+(n,n).
+\]
+
+There are four cases.
+
+\subsubsection*{Case 1: \(n\equiv1\pmod4\)}
 
 Then
 \[
-(n,n)\equiv (1,1)\pmod4.
+(n,n)\equiv(1,1)\pmod4,
 \]
-So \((n,n)\) lies in a losing block. Therefore the second player wins.
+so \((n,n)\) lies in a losing block. Hence the first player loses.
 
-\subsubsection*{Case 2: \(n\equiv 2\pmod4\)}
+\subsubsection*{Case 2: \(n\equiv2\pmod4\)}
 
 Then
 \[
-(n,n)\equiv (2,2)\pmod4.
+(n,n)\equiv(2,2)\pmod4,
 \]
-Again, \((n,n)\) lies in a losing block. Therefore the second player wins.
+so \((n,n)\) also lies in a losing block. Hence the first player loses.
 
-\subsubsection*{Case 3: \(n\equiv 3\pmod4\)}
+\subsubsection*{Case 3: \(n\equiv3\pmod4\)}
 
-Then the first player can move to a losing block:
+Then the first player can move
 \[
-(n,n)\mapsto (n-1,n-2).
+(n,n)\mapsto(n-1,n-2)
 \]
-Modulo \(4\),
+Modulo \(4\), this is
 \[
-(3,3)\mapsto (2,1).
+(3,3)\mapsto(2,1)
 \]
-Since \((2,1)\) is a losing-type residue, the first player moves to a losing
-position. Therefore the first player wins.
+Since \((2,1)\) is a losing-type residue, the first player can move to a losing position. Hence the first player wins.
 
-\subsubsection*{Case 4: \(n\equiv 0\pmod4\)}
+\subsubsection*{Case 4: \(n\equiv0\pmod4\)}
 
-The only legal moves from \((n,n)\) are
+The square \((n,n)\) is not itself in the losing block pattern. However, because it is the top-right corner, it has only two legal moves:
 \[
 (n,n)\mapsto(n-1,n-2),
 \]
 \[
-(n,n)\mapsto(n-2,n-1).
+(n,n)\mapsto(n-2,n-1)
 \]
 
-But both resulting positions are winning, because each can move to
+Both resulting positions are winning, because from either one the next player can move to
 \[
-(n-3,n-3),
+(n-3,n-3).
+\]
+
+Indeed,
+\[
+(n-1,n-2)\mapsto(n-3,n-3),
 \]
 and
 \[
-(n-3,n-3)\equiv(1,1)\pmod4.
+(n-2,n-1)\mapsto(n-3,n-3)
 \]
-So \((n-3,n-3)\) is losing.
 
-Therefore \((n,n)\) is losing, and the second player wins.
-
-\subsection*{Final general result}
-
-Hence, on an \(n\times n\) board starting from the top-right corner,
-
+Since
 \[
-\boxed{\text{the first player wins if and only if } n\equiv 3\pmod4.}
+n\equiv0\pmod4,
+\]
+we have
+\[
+n-3\equiv1\pmod4
+\]
+Therefore
+\[
+(n-3,n-3)\equiv(1,1)\pmod4,
+\]
+which is a losing block position.
+
+Thus every legal move from \((n,n)\) gives the opponent a move to a losing position. Hence \((n,n)\) is losing.
+
+\subsection*{Conclusion}
+
+Therefore, on an \(n\times n\) board starting from the top-right corner,
+\[
+\text{the first player wins if and only if } n\equiv3\pmod4
 \]
 
 For the usual chessboard,

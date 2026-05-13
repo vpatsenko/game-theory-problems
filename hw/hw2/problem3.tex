@@ -1,0 +1,144 @@
+\textbf{3.\ (Pawn duel).}
+Consider the following game on a \(3\times 8\) table.
+Each of the two players has three pawns along the short edges.
+During the first turn each player may move any of his pawns towards the opposite
+edge but not further than by \(3\) cells.
+During the later rounds each player may move any of his pawns towards the
+opposite edge by any number of cells.
+The players cannot move the pawns vertically or diagonally, nor can they jump
+across or take pawns of the other player.
+The player that has no legal turn loses.
+Which player has a winning strategy?
+How should he play?
+
+\medskip
+
+\textbf{Solution.}
+
+For each of the three rows, let
+\[
+d_i=\text{the number of empty cells between the two pawns in row } i
+\]
+
+Initially, in each row the two pawns stand at opposite ends of an \(8\)-cell row, so
+\[
+d_1=d_2=d_3=6
+\]
+Thus the initial position is
+\[
+(6,6,6)
+\]
+
+A move in one row simply decreases exactly one of the numbers \(d_i\) by a positive amount. Hence, after the first restricted moves, the game is equivalent to Nim with three heaps of sizes
+\[
+d_1,d_2,d_3
+\]
+
+In Nim, a position is losing if and only if
+\[
+d_1\oplus d_2\oplus d_3=0,
+\]
+where \(\oplus\) denotes bitwise XOR.
+
+The initial Nim-sum is
+\[
+6\oplus 6\oplus 6 = 6\neq 0
+\]
+Indeed, in binary this is
+\[
+110_2\oplus 110_2\oplus 110_2 = 110_2
+\]
+
+The first player should move one pawn forward by exactly \(2\) cells. This changes one gap from \(6\) to \(4\), so the position becomes
+\[
+(4,6,6).
+\]
+
+Now
+\[
+4\oplus 6\oplus 6 = 4
+\]
+
+If the second player wanted to make the Nim sum zero immediately, he would have to change one heap \(h\) into
+\[
+h' = h\oplus 4
+\]
+
+The possible changes for \(h\) are :
+
+\(h=4\):
+\[
+4\to 4\oplus 4 = 0,
+\]
+or for \(h=6\):
+\[
+6\to 6\oplus 4 = 2
+\]
+
+Both moves require decreasing a gap by \(4\). But on the second player's first move, he is allowed to move a pawn by at most \(3\) cells. Therefore, the second player cannot move to a zero Nim-sum position.
+
+After that, the first player is no longer restricted. From then on he uses the standard Nim strategy: after every move of the opponent, make
+\[
+d_1\oplus d_2\oplus d_3=0
+\]
+
+For example, after the first move
+\[
+(6,6,6)\to(4,6,6),
+\]
+the second player's first move can produce, up to permutation of rows, only one of the following positions:
+\[
+(3,6,6),\quad (2,6,6),\quad (1,6,6),
+\]
+or
+\[
+(4,5,6),\quad (4,4,6),\quad (4,3,6)
+\]
+
+The first player answers as follows:
+\[
+(3,6,6)\to(0,6,6),
+\]
+\[
+(2,6,6)\to(0,6,6),
+\]
+\[
+(1,6,6)\to(0,6,6),
+\]
+\[
+(4,5,6)\to(3,5,6),
+\]
+\[
+(4,4,6)\to(4,4,0),
+\]
+\[
+(4,3,6)\to(4,2,6)
+\]
+
+In each case the resulting Nim-sum is zero.
+
+Thus the first player can always give the second player a position satisfying
+\[
+d_1\oplus d_2\oplus d_3=0.
+\]
+
+The game eventually ends.
+Since the first player always leaves the second player a zero Nim sum position, the second player is the one who eventually has no legal move.
+
+\smallbreak
+Therefore, the first player has a winning strategy.
+
+\[
+\text{The first player wins.}
+\]
+
+His strategy is:
+
+\[
+\text{First move: move any pawn forward by exactly }2\text{ cells.}
+\]
+
+After that, always move so that
+\[
+d_1\oplus d_2\oplus d_3=0
+\]
