@@ -1,4 +1,7 @@
 \textbf{4.\ (Cake division).}
+
+\medskip
+
 Albert and Bernie divide a cake by alternating proposals. First Albert proposes
 a division. If Bernie accepts, the division is implemented. Otherwise they wait
 one hour and Bernie proposes. If Albert accepts, the division is implemented;
@@ -13,52 +16,46 @@ worthless. Find a subgame perfect Nash equilibrium and determine how long they w
 
 \textbf{Solution.}
 
-Let
-\[
-\delta=\frac12.
-\]
-
 The last possible valuable proposal is at \(t=5\), made by Bernie. If Albert
 rejects at \(t=5\), both get \(0\). Hence Bernie can keep the whole remaining cake:
 \[
-V_5^P=\delta^5=\frac1{32}.
+V_5^P=\left(\frac12\right)^5=\frac1{32}
 \]
 
-Work backwards. At time \(t\), the responder can reject and become proposer at
-time \(t+1\). Therefore the responder must receive exactly the continuation value
+Applying backward induction. At time \(t\), the responder can reject and become proposer at
+time \(t+1\). Therefore the responder must receive exactly the value with which the responder would accept the proposal
 \[
-V_{t+1}^P.
+V_{t+1}^P -
 \]
 
 Hence
 \[
-V_t^P=\delta^t - V_{t+1}^P.
+V_t^P=\left(\frac1{2}\right)^t - V_{t+1}^P
 \]
 
-Now compute:
+Now compute with \(V_6=0\):
 \[
-
-V_5^P=\frac1{32},
+V_5^P=\left(\frac1{2}\right)^5 - V_6=\frac1{32} - 0=\frac1{32},
 \]
 \[
-V_4^P=\frac1{16}-\frac1{32}=\frac1{32},
+V_4^P=\left(\frac1{2}\right)^4 - V_5=\frac1{16} - \frac1{32}=\frac1{32},
 \]
 \[
-V_3^P=\frac18-\frac1{32}=\frac3{32},
+V_3^P=\left(\frac1{2}\right)^3 - V_4=\frac1{8} - \frac1{16}=\frac3{32},
 \]
 \[
-V_2^P=\frac14-\frac3{32}=\frac5{32},
+V_2^P=\left(\frac1{2}\right)^2 - V_3=\frac1{4} - \frac3{32}=\frac5{32},
 \]
 \[
-V_1^P=\frac12-\frac5{32}=\frac{11}{32},
+V_1^P=\left(\frac1{2}\right)^1 - V_2=\frac1{2} - \frac5{32}=\frac{11}{32},
 \]
 \[
-V_0^P=1-\frac{11}{32}=\frac{21}{32}.
+V_0^P=\left(\frac1{2}\right)^0 - V_1=\frac{21}{32}
 \]
 
 At \(t=0\), Albert is proposer. He gives Bernie her continuation value:
 \[
-\frac{11}{32}.
+\frac{11}{32}
 \]
 
 Therefore Albert proposes
@@ -69,9 +66,9 @@ and Bernie accepts.
 
 Thus the subgame perfect Nash equilibrium outcome is
 \[
-\boxed{\left(\frac{21}{32},\frac{11}{32}\right)}
+\left(\frac{21}{32},\frac{11}{32}\right)
 \]
 and they wait
 \[
-\boxed{0\text{ hours}.}
+0\text{ hours}
 \]
