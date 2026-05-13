@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.9)  13 MAY 2026 13:24
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.9)  13 MAY 2026 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,49 +334,40 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
- (./problem1.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+ (./problem3_1.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) (./problem2.tex
+)
 
 [1
 
 ]
+File: problem3_1.png Graphic file (type bmp)
+<problem3_1.png>
+
 
 [2]
 
-[3]
+[3])
 
-[4]) (./problem3.tex
-
-[5]
-
-[6]) (./problem4.tex
-
-[7]) (./problem5.tex
-
-[8]
-
-[9])
-
-[10] (./main.aux)
+[4] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12639 strings out of 475366
- 259037 string characters out of 5762340
- 619013 words of memory out of 5000000
- 35394 multiletter control sequences out of 15000+600000
- 560592 words of font info for 51 fonts, out of 8000000 for 9000
+ 12614 strings out of 475366
+ 258680 string characters out of 5762340
+ 614013 words of memory out of 5000000
+ 35382 multiletter control sequences out of 15000+600000
+ 560584 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 84i,8n,91p,441b,171s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,91p,441b,183s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (10 pages).
+Output written on main.pdf (4 pages).

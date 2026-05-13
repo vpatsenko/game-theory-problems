@@ -1,0 +1,78 @@
+\textbf{6.\ (Dormitory shopping).}
+Anna and Belle live in the same dormitory. They go shopping every day, and
+shopping takes \(20\) minutes. They decided to cooperate for \(4\) days:
+on Monday Anna buys food for both of them, on Tuesday Belle does the same,
+on Wednesday Anna again, and on Thursday Belle again.
+
+Buying food for the mate takes \(5\) extra minutes. Thus, the assigned shopper
+has an incentive to break the rule. If any agent does not buy food for the mate,
+then both go shopping by themselves for the rest of the game.
+
+Formalize the situation as a dynamic game and find all subgame perfect Nash
+equilibria.
+
+\textbf{Solution.}
+
+Let
+\[
+c=\text{``buy for both''},\qquad d=\text{``buy only for yourself''}
+\]
+
+If someone chooses \(d\), cooperation ends and both shop separately for the rest
+of the game. Payoffs are negative total shopping time.
+
+Use backward induction.
+
+On Thursday, Belle chooses between
+\[
+c:25,\qquad d:20
+\]
+Thus Belle chooses \(d\).
+
+On Wednesday, Anna knows Belle will defect on Thursday. If Anna cooperates, her
+remaining cost is
+\[
+25+20=45
+\]
+If Anna defects, her remaining cost is
+\[
+20+20=40
+\]
+Thus Anna chooses \(d\).
+
+On Tuesday, Belle knows Anna will defect on Wednesday. If Belle cooperates, her
+remaining cost is
+\[
+25+20+20=65.
+\]
+If Belle defects, her remaining cost is
+\[
+20+20+20=60.
+\]
+Thus Belle chooses \(d\).
+
+On Monday, Anna knows Belle will defect on Tuesday. If Anna cooperates, her
+total cost is
+\[
+25+20+20+20=85.
+\]
+If Anna defects, her total cost is
+\[
+20+20+20+20=80.
+\]
+Thus Anna chooses \(d\).
+
+Therefore the unique subgame perfect Nash equilibrium is
+\[
+s_A=(d,d),\qquad s_B=(d,d)
+\]
+
+That is, each player defects whenever it is her turn to buy.
+
+On the equilibrium path, Anna defects immediately on Monday. Then both shop
+alone every day. Hence total shopping times are
+\[
+(80,80)
+\]
+
+The agreement is therefore not subgame perfect.

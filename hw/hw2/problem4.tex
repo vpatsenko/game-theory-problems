@@ -20,10 +20,26 @@ rejects at \(t=5\), both get \(0\). Hence Bernie can keep the whole remaining ca
 V_5^P=\left(\frac12\right)^5=\frac1{32}
 \]
 
-Applying backward induction. At time \(t\), the responder can reject and become proposer at
-time \(t+1\). Therefore the responder must receive exactly the value with which the responder would accept the proposal
+% Applying backward induction. At time \(t\), the responder can reject and become proposer at
+% time \(t+1\). Therefore the responder must receive exactly the value with which the responder would accept the proposal
+% \[
+% V_{t+1}^P -
+% \]
+
+Applying backward induction, at time \(t\) the responder can reject the offer
+and become the proposer at time \(t+1\). Hence the responder's continuation
+value is
 \[
-V_{t+1}^P -
+V_{t+1}^P.
+\]
+Therefore, in equilibrium, the proposer gives the responder exactly
+\[
+V_{t+1}^P
+\]
+and keeps the rest of the current cake value. Since the value of the whole cake
+at time \(t\) is \(\delta^t\), the proposer obtains
+\[
+V_t^P=\delta^t - V_{t+1}^P.
 \]
 
 Hence

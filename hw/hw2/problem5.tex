@@ -25,27 +25,12 @@ votes. Since the proposer votes for himself, he needs
 \]
 additional votes.
 
-Using backward induction. A pirate votes yes only if he gets strictly more than
+Use backward induction. A pirate votes yes only if he gets strictly more than
 he would get after rejecting the proposal. We also don't want to pay the next possible captain and we pay only to those pirates
 who would get 0 if a proposal is rejected.
 
-% For small \(n\), the pattern is:
-% \[
-% n=1:\quad (1000),
-% \]
-% \[
-% n=2:\quad (1000,0),
-% \]
-% \[
-% n=3:\quad (999,1,0),
-% \]
-% \[
-% n=4:\quad (999,1,0,0),
-% \]
-% \[
-% n=5:\quad (998,1,1,0,0)
-% \]
-
+\medskip
+\noindent\textbf{Small cases.}
 For small \(n\), the pattern is:
 \[
 n=1:\quad (1000),
@@ -62,8 +47,8 @@ n=4:\quad (999,0,1,0),
 \[
 n=5:\quad (998,0,1,0,1)
 \]
-
-
+\medskip
+\noindent\textbf{General pattern.}
 Thus, in a subgame with \(n\) pirates, the proposer buys the cheapest votes:
 pirates
 \[
@@ -71,6 +56,8 @@ pirates
 \]
 each get \(1\) item, and the others get \(0\).
 
+\medskip
+\noindent\textbf{The case \(n=50\).}
 For \(n=50\), the captain needs
 \[
 \left\lceil \frac{50}{2}\right\rceil =25
@@ -79,14 +66,16 @@ votes total. His own vote counts, so he needs \(24\) more votes.
 
 He gives \(1\) item to pirates
 \[
-3,5,7,\dots,49.
+3,5,7,\dots,49
 \]
 
 There are \(24\) such pirates. Therefore the captain keeps
 \[
-1000-24=976.
+1000-24=976
 \]
 
+\medskip
+\noindent\textbf{Equilibrium proposal.}
 Hence the equilibrium proposal is
 \[
 (x_1,x_2,\dots,x_{50})
