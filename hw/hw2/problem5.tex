@@ -1,0 +1,119 @@
+\textbf{5.\ (Pirates and treasure).}
+50 pirates ordered by rank are dividing a big treasure that consists of 1000
+equal indivisible items. They employ the following procedure. Firstly, the
+captain offers a division. If at least half of the crew (including the captain)
+agree, then the division is applied. Otherwise the captain is thrown overboard
+and the second-ranked pirate offers a division, and so on. Formalize the
+situation as a dynamic game and find a subgame perfect Nash equilibrium such
+that no pirate is indifferent at any time.
+
+\textbf{Solution.}
+
+Consider a subgame with \(n\) surviving pirates, relabeled
+\[
+1,2,\dots,n,
+\]
+where pirate \(1\) is the proposer. A proposal passes if it gets at least
+\[
+\left\lceil \frac n2 \right\rceil
+\]
+votes. Since the proposer votes for himself, he needs
+\[
+\left\lceil \frac n2 \right\rceil -1
+=
+\left\lfloor \frac{n-1}{2}\right\rfloor
+\]
+additional votes.
+
+Using backward induction. A pirate votes yes only if he gets strictly more than
+he would get after rejecting the proposal. We also don't want to pay the next possible captain and we pay only to those pirates
+who would get 0 if a proposal is rejected.
+
+% For small \(n\), the pattern is:
+% \[
+% n=1:\quad (1000),
+% \]
+% \[
+% n=2:\quad (1000,0),
+% \]
+% \[
+% n=3:\quad (999,1,0),
+% \]
+% \[
+% n=4:\quad (999,1,0,0),
+% \]
+% \[
+% n=5:\quad (998,1,1,0,0)
+% \]
+
+For small \(n\), the pattern is:
+\[
+n=1:\quad (1000),
+\]
+\[
+n=2:\quad (1000,0),
+\]
+\[
+n=3:\quad (999,0,1),
+\]
+\[
+n=4:\quad (999,0,1,0),
+\]
+\[
+n=5:\quad (998,0,1,0,1)
+\]
+
+
+Thus, in a subgame with \(n\) pirates, the proposer buys the cheapest votes:
+pirates
+\[
+3,5,7,\dots
+\]
+each get \(1\) item, and the others get \(0\).
+
+For \(n=50\), the captain needs
+\[
+\left\lceil \frac{50}{2}\right\rceil =25
+\]
+votes total. His own vote counts, so he needs \(24\) more votes.
+
+He gives \(1\) item to pirates
+\[
+3,5,7,\dots,49.
+\]
+
+There are \(24\) such pirates. Therefore the captain keeps
+\[
+1000-24=976.
+\]
+
+Hence the equilibrium proposal is
+\[
+(x_1,x_2,\dots,x_{50})
+=
+(976,0,1,0,1,0,\dots,1,0)
+\]
+where
+\[
+x_1=976,
+\]
+\[
+x_{3}=x_{5}=\cdots=x_{49}=1,
+\]
+and
+\[
+x_2=x_4=\cdots=x_{50}=0
+\]
+
+The yes-voters are
+\[
+\{1,3,5,\dots,49\},
+\]
+which gives exactly \(25\) votes, so the proposal passes.
+
+Therefore, in the subgame perfect Nash equilibrium, the first captain survives
+and keeps
+\[
+976
+\]
+items.
