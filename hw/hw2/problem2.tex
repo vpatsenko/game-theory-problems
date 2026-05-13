@@ -1,4 +1,13 @@
 \textbf{2.\ (Moving the knight).}
+A knight is standing at the top-right corner of the chessboard (field \texttt{h8}).
+Two players move it sequentially, but they must move it two fields downwards or leftwards (and then one field in any suitable direction).
+For instance, from \texttt{f6} the knight can be moved only to \texttt{g4}, \texttt{e4}, \texttt{d5} or \texttt{d7}.
+The player unable to make a move loses.
+Which player does have a winning strategy?
+What is this strategy?
+Can you generalize the answer to an arbitrary size of the field?
+
+\textbf{Solution.}
 
 We number the board by coordinates
 \[
@@ -25,7 +34,8 @@ A legal move is one of
 provided the new square is still on the board.
 winning if the player to move from it can move to a losing position.
 
-\subsection*{Losing positions on the \(8\times 8\) board}
+\medskip
+\noindent\textbf{Losing positions on the \(8\times 8\) board.}
 
 In coordinates, these are the \(2\times2\) blocks
 \[
@@ -67,7 +77,8 @@ On the \(8\times 8\) board, the losing positions can be displayed as follows:
 \end{array}
 \]
 
-\subsection*{Why these positions are losing}
+\medskip
+\noindent\textbf{Why these positions are losing.}
 
 Let
 \[
@@ -116,37 +127,8 @@ is losing.
 
 Thus the first player loses and the second player wins.
 
-% \subsection*{General \(n\times n\) board}
-
-% For the same game on an \(n\times n\) board, the losing block pattern repeats
-% modulo \(4\): positions with
-% \[
-% x,y\equiv 1 \text{ or }2 \pmod 4
-% \]
-% are losing.
-
-% Starting from \((n,n)\), if \(n\equiv1\) or \(2\pmod4\), the initial square is
-% already losing. If \(n\equiv3\pmod4\), the first player moves
-% \[
-% (n,n)\mapsto(n-1,n-2),
-% \]
-% which has residue \((2,1)\) and is losing. If \(n\equiv0\pmod4\), the only
-% first moves go to \((n-1,n-2)\) or \((n-2,n-1)\), and each can be answered by
-% moving to \((n-3,n-3)\equiv(1,1)\pmod4\), a losing square.
-
-% Thus, on an \(n\times n\) board starting from the top-right corner,
-
-% \[
-% \boxed{\text{the first player wins if and only if } n\equiv 3\pmod4.}
-% \]
-
-% For the usual chessboard,
-% \[
-% 8\equiv0\pmod4,
-% \]
-% so the first player loses and the second player wins.
-
-\section*{Moving the knight: general solution}
+\medskip
+\noindent\textbf{General solution.}
 
 Consider an \(n\times n\) board with coordinates
 \[
@@ -160,7 +142,8 @@ where the knight starts at the top-right corner
 The legal moves are the same as before whenever the new square is still on the board.
 
 
-\subsection*{Losing blocks}
+\medskip
+\noindent\textbf{Losing blocks.}
 
 The basic losing positions are the \(2\times2\) blocks satisfying
 \[
@@ -170,7 +153,8 @@ x,y\equiv 1 \text{ or } 2 \pmod 4.
 
 A move from such a square always leaves this set. Moreover, after any legal move from such a square, the next player can move back to a smaller square of the same type. Therefore these positions are losing positions.
 
-\subsection*{Starting from the corner}
+\medskip
+\noindent\textbf{Starting from the corner.}
 
 Now consider the starting square
 \[
@@ -179,7 +163,8 @@ Now consider the starting square
 
 There are four cases.
 
-\subsubsection*{Case 1: \(n\equiv1\pmod4\)}
+\medskip
+\noindent\textbf{Case 1: \(n\equiv1\pmod4\).}
 
 Then
 \[
@@ -187,7 +172,8 @@ Then
 \]
 so \((n,n)\) lies in a losing block. Hence the first player loses.
 
-\subsubsection*{Case 2: \(n\equiv2\pmod4\)}
+\medskip
+\noindent\textbf{Case 2: \(n\equiv2\pmod4\).}
 
 Then
 \[
@@ -195,7 +181,8 @@ Then
 \]
 so \((n,n)\) also lies in a losing block. Hence the first player loses.
 
-\subsubsection*{Case 3: \(n\equiv3\pmod4\)}
+\medskip
+\noindent\textbf{Case 3: \(n\equiv3\pmod4\).}
 
 Then the first player can move
 \[
@@ -207,7 +194,8 @@ Modulo \(4\), this is
 \]
 Since \((2,1)\) is a losing-type residue, the first player can move to a losing position. Hence the first player wins.
 
-\subsubsection*{Case 4: \(n\equiv0\pmod4\)}
+\medskip
+\noindent\textbf{Case 4: \(n\equiv0\pmod4\).}
 
 The square \((n,n)\) is not itself in the losing block pattern. However, because it is the top-right corner, it has only two legal moves:
 \[
@@ -247,7 +235,8 @@ which is a losing block position.
 
 Thus every legal move from \((n,n)\) gives the opponent a move to a losing position. Hence \((n,n)\) is losing.
 
-\subsection*{Conclusion}
+\medskip
+\noindent\textbf{Conclusion.}
 
 Therefore, on an \(n\times n\) board starting from the top-right corner,
 \[
